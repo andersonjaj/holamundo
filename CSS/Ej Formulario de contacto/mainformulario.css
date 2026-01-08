@@ -1,0 +1,45 @@
+body{
+    background-color: blanchedalmond; /*color de fondo del cuerpo*/
+}
+
+.box {
+    background-color: white; /*fondo blanco*/
+    padding: 12px 20px;
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.2); /*sombra alrededor del cuadro*/
+    border-radius: 4px; /*bordes redondeados*/
+}
+
+input[type="text"]{
+    width: 100%; /*usa todo el ancho del contenedor*/
+    padding: 12px 20px; /*aumenta el espacio interno*/
+    margin: 8px 0; /*espacio entre elementos*/
+    display: inline-block; /*permite aplicar margen y padding*/
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /*incluye padding y border en el ancho total*/
+    text-transform: capitalize; /*primera letra en mayúscula*/
+}
+
+input[type="submit"] {
+    width: 100%;
+    background-color: #4CAF50; /*color de fondo verde*/
+    color: white; /*color del texto blanco*/
+    padding: 14px 20px; /*aumenta el espacio interno*/
+    margin: 8px 0; /*espacio entre elementos*/
+    border: none; /*sin borde*/
+    border-radius: 4px;
+    cursor: pointer; /*cambia el cursor al pasar por encima*/
+    
+}
+
+textarea{
+    width: 100%; /*usa todo el ancho del contenedor*/
+    padding: 12px 20px; /*aumenta el espacio interno*/
+    margin: 8px 0; /*espacio entre elementos*/
+    display: inline-block; /*permite aplicar margen y padding*/
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /*incluye padding y border en el ancho total*/
+    text-transform: capitalize; /*primera letra en mayúscula*/
+
+}

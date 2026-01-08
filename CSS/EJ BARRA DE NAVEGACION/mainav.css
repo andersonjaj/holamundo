@@ -1,0 +1,42 @@
+ul{
+    list-style: none; /*quitamos la bi;etas*/
+    padding: 0px; /*quitamos el padding*/
+    margin: 0; /*quitamos el margin*/
+    overflow: hidden; /*para que no se salga del contenedor*/
+    position: fixed; /*para que se quede fija en la pantalla*/
+    top: 0; /*para que se quede en la parte superior*/
+    left: 0; /*para que se quede en la parte izquierda*/
+    width: 100%;
+    background-color: #333; /*color de fondo*/
+    
+}
+
+li{
+    /* se pueden usar las dos opciones para colocar en una linea 
+    los elementoss de la lista en la parte superior */
+    /*display: inline; para que los elementos se muestren en linea*/
+    float: left; /*para que los elementos se muestren en linea*/
+   
+}
+
+li a {
+    display:block; /*para que el enlace ocupe todo el espacio del li*/
+    color: white; /*color del texto*/
+    text-align: center; /*para centrar el texto*/
+    padding: 14px; /*espaciado interno para separarlos*/
+    text-decoration: none; /*para quitar el subrayado*/
+    
+}
+
+li a:hover {
+    background-color: rgba(0,0,0,0.5); /*color de fondo al pasar el raton*/ /*rgba para 
+    poner transparencia*/
+}
+
+.active {
+    background-color: #4CAF50; /*color de fondo del elemento activo*/
+}
+
+.conten {
+    margin-top: 47px; /*para que el contenido no se quede debajo de la barra de navegacion*/
+}

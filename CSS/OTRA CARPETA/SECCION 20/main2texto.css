@@ -1,0 +1,38 @@
+/* ul{
+    background-color: lightgray;
+    border: solid 2px black;
+    border-radius: 4px;
+    padding-left: 0px;
+}
+
+ul li {
+
+    list-style-type: none;
+}
+
+li{
+    border-bottom: solid 1px gray;
+    padding: 10px;
+} */
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+tr:nth-child(even){
+    background-color: lightgray;
+}
+
+td{
+    border: 1px solid black;
+    padding-left: 8px;
+}
+
+table th{
+    background-color: goldenrod;
+    text-align: left;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 8px;
+}

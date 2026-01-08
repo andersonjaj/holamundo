@@ -1,14 +1,11 @@
-p {
-    color: blueviolet;
-    text-align: justify;
-    text-indent: 30px;
-    line-height: 1.5;
-    
+p{
+  
 }
 
-a {
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    
+img{
+ float: left;
+}
+
+img:hover{
+    opacity: 0.5;
 }

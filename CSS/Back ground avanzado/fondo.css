@@ -1,0 +1,14 @@
+body{
+    background-color: beige;
+
+}
+
+.fondo{
+    height: 500px;
+    background-color: rgb(10, 82, 82);
+    background-image: url('https://pixabay.com/get/g6b2608d308b3cf4da4465c6ac1a93660614c2e5095fbba6312f01605d65b512f8000715c5363a47050fd23430323f368ce1bf645f9d3d292dfafb1bcacee67fc_1920.png');
+    background-repeat: no-repeat ;/* no repite la imagen */
+    background-position: center; /* centra la imagen */
+    background-attachment: scroll; /* la imagen se mueve al hacer scroll */
+    background-size: cover ; /* la imagen cubre todo el contenedor */
+}

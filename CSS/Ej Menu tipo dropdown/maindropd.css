@@ -1,0 +1,57 @@
+.dropbtn{
+    /* Estilos para el botón del menú desplegable */
+    background-color: rgb(5, 54, 54);
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown{
+    position: relative;/*sirve para posicionar el contenido del dropdown*/
+    display: inline-block;/*para que el dropdown se comporte como un
+     elemento en línea*/
+
+}
+
+.dropdown-content{
+    display: none; /*oculta el contenido del dropdown por defecto*/
+    position: absolute; /*posiciona el contenido del dropdown
+    en relación con el botón*//*esto permite que el contenido se
+    superponga otros elementos*/
+    background-color: #f9f9f9; /*color de fondo del contenido*/
+    min-width: 160px; /*ancho mínimo del contenido*/
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /*sombra para darle
+    profundidad*/
+    z-index: 1; /*asegura que el contenido esté por encima de otros elementos*/
+}
+
+.dropdown-content a{
+    color: black; /*color del texto de los enlaces*/
+    padding: 12px 16px; /*espaciado interno de los enlaces*//*los primeros 12px hacen
+    referencia al padding superior e inferior, y los 16px al padding izquierdo y derecho*/
+    text-decoration: none; /*elimina el subrayado de los enlaces*/
+    display: block; /*hace que los enlaces se comporten como bloques*/
+
+}
+
+.dropdown-content a:hover{/*esto indica que todos los elementos <a> dentro de
+     .dropdown-contentcambiarán su estilo cuando el usuario pase el cursor sobre ellos*/
+    background-color: #f1f1f1; /*cambia el color de fondo al pasar el cursor sobre un enlace*/
+}
+
+.dropdown:hover .dropbtn{ /*esto indica que el botón del dropdown cambiará su estilo, por lo que 
+    estoy seleccionando el botón dentro del dropdown cuando el usuario pase el cursor sobre el dropdown*/
+    background-color: rgb(13, 92, 92); /*cambia el color de fondo del botón al pasar el cursor sobre el dropdown*/
+
+}
+
+.dropdown:hover  .dropdown-content{/*esto indica que el contenido del dropdown cambiará su estilo, por lo que 
+    estoy seleccionando el contenido dentro del dropdown cuando el usuario pase el cursor sobre el dropdown*/
+    display: block; /*esto hace que el contenido del dropdown se muestre cuando el usuario pase el cursor sobre el dropdown*/
+}
+.dropdown-content:hover{
+    display: block;/*esto hace que el contenido del dropdown se muestre cuando
+    el usuario pase el cursor sobre él*/
+}

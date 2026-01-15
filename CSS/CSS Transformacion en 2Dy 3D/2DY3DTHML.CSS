@@ -1,0 +1,26 @@
+.box{
+    position: relative;
+    left:50px;
+    top: 50px;
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, 2);
+    transform:  rotate(20deg); /*transform solo se aplica a 
+elementos en bloque"block" o "inline-block" , transform es una propiedad 
+que permite aplicar transformaciones 2D o 3D a un elemento HTML, tiene diversas
+ funciones como: translate, rotate, scale, skew, matrix, perspective*, rotate hace que 
+el elemento gire en un angulo especifico solo recibe un valor en grados(deg)
+translate mueve el elemento en el eje X y Y, scale cambia el tamaño del elemento,
+ skew inclina el elemento en los ejes X y Y, matrix permite combinar varias transformaciones
+ en una sola, perspective* agrega una perspectiva 3D al elemento. scale
+    cambia el tamaño del elemento en los ejes X y Y se puede cambiar 
+    proporcionalmente o no. matrix permite combinar varias transformaciones en una sola.
+    */
+    transition: width 2s;
+}
+
+.box:hover{
+    width: 200px;
+    background-color: lightblue;
+}

@@ -1,0 +1,30 @@
+body{
+    background-color: beige;
+
+}
+
+/* .fondo{
+    height: 500px;
+    background-color: rgb(10, 82, 82);
+    background-image: url('https://pixabay.com/get/g6b2608d308b3cf4da4465c6ac1a93660614c2e5095fbba6312f01605d65b512f8000715c5363a47050fd23430323f368ce1bf645f9d3d292dfafb1bcacee67fc_1920.png');
+    /*background-repeat: no-repeat ;no repite la imagen */
+    /*background-position: center; /* centra la imagen */
+    /*background-attachment: scroll; /* la imagen se mueve al hacer scroll */
+    /*background-size: cover ; /* la imagen cubre todo el contenedor */
+
+/*}*/
+
+.fondo{
+ background-color: rgba(0, 0, 0, 2); /*rgba indica que se usara
+    un color con transparencia , el primer valor es rojo, el segundo verde, 
+    el tercero azul y el cuarto la transparencia, esto combina los tres colores para
+    crear un color personalizado , la opaciodad va del 1 al 10 donde 1 
+    es totalmente transparente y 10 es totalmente opaco */
+ background-color: hsl(hue, saturation, lightness); /*hsl indica que se usara un color con
+    matiz, saturacion y luminosidad , el primer valor es el matiz (hue) que va del 0 al 360,
+    el segundo valor es la saturacion (saturation) que va del 0% al 100% y el tercer valor es la luminosidad (lightness)
+    que va del 0% al 100% */
+    opacity: 1;/* la opacidad del contenedor, va del 0 al 1 , donde 0 es totalmente transparente
+     y 1 es totalmente opaco, pero opacity afecta a todo el contenedor incluyendo
+     su contenido */
+}

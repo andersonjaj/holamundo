@@ -1,0 +1,20 @@
+.fondo{
+    background-image: linear-gradient(-15deg, blue,rgba(12, 146, 224,0)); /*liner-gradient(dirección, color1, color2) 
+    tiene esta sintaxis y sirve para crear un degradado de colores*/ 
+    /*podemos indicar cuando queremos que pare el degradado con porcentajes o con pixeles,
+    ejemplo: linear-gradient(to right, blue 0%, green 50%, yellow 100%), esto da
+    un degradado que empieza en azul, a la mitad es verde y al final amarillo y se va a repetir
+    el degradado si el tamaño del contenedor es mayor al del degradado*/
+    /*si queremos agregar mas colores solo los añadimos separados por comas*/
+    /*tiene  difrentes direcciones
+    to right (de izquierda a derecha)
+    to left (de derecha a izquierda)
+    to top (de abajo hacia arriba)
+    to bottom (de arriba hacia abajo) 
+    to bottom right (de arriba a abajo y de izquierda a derecha)
+    to top left (de abajo a arriba y de derecha a izquierda)
+    tambien se puede usar grados (45deg, 90deg, 180deg, etc)
+    ejemplo: linear-gradient(45deg, blue, yellow) */
+
+
+}

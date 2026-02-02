@@ -24,6 +24,26 @@ def close_db(e=None):
 
     if db is not None:
         db.close()
+#importar el cursos y la conexion a la base de datos
+def init_db():
+    #obtener la conexion a la base de datos y el cursor
+    db, c = get_db()
+    #iteramos todas las instrucciones definidas en el archivo schema.py
+    for instruction in instructions:
+        #ejecutamos cada instrucción SQL para crear las tablas necesarias en la base de datos
+        c.execute(instruction)
+    #se confirman los cambios realizados en la base de datos
+    db.commit()
+#se define un comando de línea de comandos llamado 'init-db' para inicializar la base de datos
+#se ejecuta flask init-db en la terminal para ejecutar este comando
+@click.command('init-db')
+#permite que la función acceda al contexto de la aplicación Flask
+@with_appcontext
+#esta función inicializa la base de datos ejecutando las instrucciones definidas en el archivo schema.py
+def init_db_command():
+    init_db()
+    #se imprime un mensaje en la consola indicando que la base de datos ha sido inicializada y a terminado el proceso
+    click.echo('Base de datos inicializada.')
 
 def init_app(app):
     app.teardown_appcontext(close_db)

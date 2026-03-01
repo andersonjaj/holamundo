@@ -10,7 +10,7 @@ from .schema import instructions
 def get_db():
     if 'db' not in g:
         g.db = mysql.connector.connect(
-            host=current_app.config['DATABASE_HOTS'],
+            host=current_app.config['DATABASE_HOST'],
             user=current_app.config['DATABASE_USER'],
             password=current_app.config['DATABASE_PASSWORD'],
             database=current_app.config['DATABASE']
@@ -47,4 +47,6 @@ def init_db_command():
 
 def init_app(app):
     app.teardown_appcontext(close_db)
+    #aqui se agrega el comando init_db_command a la aplicación Flask
+    app.cli.add_command(init_db_command)
     

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- se exporta los estilos y scripts de Bootstrap desde un CDN (Content Delivery Network) para utilizar en la página web. Esto permite que la página tenga un diseño responsive y 
+    estilos predefinidos sin necesidad de descargar e incluir los archivos de Bootstrap localmente. -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    </head>
+     <!-- indicamos la barra de navegacion para ir a la página de gestión de aprendices -->
+ <nav class="navbar navbar-expand-lg bg-body-tertiary shadow mb-4"data-bs-theme="dark">
+  <div class="container-fluid ">
+    <a class="navbar-brand" href="#">Registro de aprendiz</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{ url_for('gestion') }}">Panel de Gestión</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <!-- cuerpo del documento, aplicamos estilos de fondo y margen superior utilizando clases de Bootstrap para mejorar la apariencia de la página. --> 
+<body class="bg-light">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h1 class="text-center mb-4">Registro de aprendiz</h1>
+                <div class="card shadow">
+                    <div class="card-body">
+                        <!-- mensaje de error o éxito al registrar un nuevo aprendiz utilizando flash messages de Flask. 
+                        Se verifica si hay mensajes flash disponibles y se muestran en la página utilizando alertas de Bootstrap 
+                        para indicar el tipo de mensaje (éxito, error). Esto proporciona retroalimentación visual 
+                        al usuario sobre el resultado de su acción al intentar registrar un nuevo aprendiz. -->
+                        {% with messages = get_flashed_messages(with_categories=true) %}
+                            {% if messages %}
+                                {% for category, message in messages %}
+                                <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                                    {{ message }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                                {% endfor %}
+                            {% endif %}
+                        {% endwith %}
+                        <!-- inici el formulario para registrar un nuevo aprendiz. El formulario se envía a la ruta "/usuario" utilizando el método POST, 
+                        lo que indica que se enviarán datos al servidor para su procesamiento. -->
+                        <form action="/usuario" method="POST">
+                            <label>Cedula</label>
+                            <input type="text" class="form-control mb-3" name="cedula" required>
+                            <label>Nombre</label>
+                            <input type="nombre" class="form-control mb-3" name="nombre" required>
+                            <label>Apellido</label>
+                            <input type="apellido" class="form-control mb-3" name="apellido" required>
+                            <label>Sexo</label>
+                            <!-- La base de datos en esta columna solo admite M o F por lo que se utiliza un elemento select para limitar las opciones disponibles al usuario.
+                            Esto garantiza que los datos ingresados sean los idoneos con los valores permitidos en la base de datos. -->
+                            <select name="sexo" class="form-select mb-3" required>
+                                <option value="" selected disabled>Seleccione...</option>
+                                <option value="M">Masculino (M)</option>
+                                <option value="F">Femenino (F)</option>
+                            </select>
+                            <!-- Del mismo modo para la fecha la base de datos solo admite fechas anteriores a la fecha actual por lo que se utiliza el atributo max para limitar la selección 
+                            de fechas a un rango válido.Esto ayuda a garantizar que los datos ingresados sean coherentes con las restricciones de la base de datos y evita errores al intentar
+                            almacenar fechas no válidas. --> 
+                            <label>Fecha de nacimiento</label>
+                            <input type="date" name="fecha_nacimiento" class="form-control mb-3" max="2026-02-10" required>
+                            
+                            <button type="submit" class="btn btn-primary w-100">Registrar y Continuar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

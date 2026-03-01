@@ -11,14 +11,19 @@ def create_app():
     #configurar la clave secreta para la aplicacion, auyda a proteger los datos de la aplicacion y las sesiones de los usuarios
     app.config.from_mapping(
         SECRET_KEY= 'mikey',
-        DATABASE_HOTS=os.environ.get('FLASK_DATABASE_HOST'),
-        DATABASE_PASSWORD=os.environ.get('FLASK_DATABASE_PASSWORD'),
-        DATABASE_USER=os.environ.get('FLASK_DATABASE_USER'),
-        DATABASE=os.environ.get('FLASK_DATABASE'),
+        DATABASE_HOST="localhost",
+        DATABASE_USER="Cypherth",
+        DATABASE_PASSWORD="19121991",
+        DATABASE="proyecto"
+        # DATABASE_HOST=os.environ.get('FLASK_DATABASE_HOST'),
+        # DATABASE_PASSWORD=os.environ.get('FLASK_DATABASE_PASSWORD'),
+        # DATABASE_USER=os.environ.get('FLASK_DATABASE_USER'),
+        # DATABASE=os.environ.get('FLASK_DATABASE'),
         )
     from . import db
     #inicializar la base de datos con la aplicacion y cerrar la conexion a la base de datos cuando la aplicacion se cierra
     db.init_app(app)
+       
 
     @app.route('/hello')
     def hello():
